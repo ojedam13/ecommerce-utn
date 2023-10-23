@@ -56,7 +56,8 @@ const displayCart = () => {
             decrese.addEventListener("click", () => {
                 if (product.quanty !== 1) {
                     product.quanty--;
-                    displayCart();
+                    saveLocal();
+                    displayCart();  
                     displayCartCounter();
                 }
             });
@@ -65,6 +66,7 @@ const displayCart = () => {
             const increse = modalBody.querySelector(".quantity-btn-increse");
             increse.addEventListener("click", () => {
                 product.quanty++;
+                saveLocal();
                 displayCart();
                 displayCartCounter();
             });
@@ -91,7 +93,7 @@ const displayCart = () => {
         modalContainer.append(modalFooter);
        // mercado pago
         const mercadopago = new MercadoPagoResponse(
-          "TESTs-e955a72e-b3ec-4cf1-bb42-0b46904581a5",
+          "TEST-e955a72e-b3ec-4cf1-bb42-0b46904581a5",
           {
             locale: "es-AR",
           }
@@ -163,6 +165,7 @@ cartBtn.addEventListener("click", displayCart);
 const deleteCartProduct = (id) => {
     const foundId = cart.findIndex((element) => element.id === id);
     cart.splice(foundId, 1);
+    saveLocal();
     displayCart();
     displayCartCounter();
 }
@@ -172,8 +175,11 @@ const displayCartCounter = () => {
     const cartLength = cart.reduce((acc, el) => acc + el.quanty, 0);
     if (cartLength > 0) {
         cartCounter.style.display = "block";
-        cartCounter.innerText = cartLength;
+        localStorage.setItem("cartLength", JSON.stringify(cartLength));
+        cartCounter.innerText = JSON.parse(localStorage.getItem("cartLength"));
+        
     } else {
         cartCounter.style.display = "none";
     }
-}
+};
+displayCartCounter();
