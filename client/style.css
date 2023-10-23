@@ -104,6 +104,7 @@ img{
     min-width: 400px;
 }
 
+
 /*modal*/
 .modal-overlay{
     display: none;
@@ -227,7 +228,6 @@ img{
 
 
 
-
 .borrar{
     background-color: var(--logo);
     border-radius: 50%;
@@ -274,7 +274,7 @@ img{
     color: #f5f5f5;
     border-radius: 5px;
 }
-
+/*Ofertas*/
 .ofert{
     padding: 20px 0 0 0;
     display: flex;
@@ -318,6 +318,11 @@ img{
     color: #f5f5f5;
     border-radius: 5px;
     font-size: 15px;
+}
+
+.products .titulo-promo{
+    color: red;
+       
 }
 /* productos */
 
@@ -475,6 +480,11 @@ section .card .card-img img{
     font-size: 18px;
     margin: 0 2px;
 }
+
+
+
+
+
 
 /* FOOTER */
 .footer{
@@ -716,12 +726,19 @@ section .card .card-img img{
         gap: 30px;
     }
     /* COMENTARIOS */
+    .mySwiper{
+        display: none;
+    }
+    .card{
+        display: none;
+    }
     .container-card{
-    height: 750px;
+   
     margin-bottom: 20px;
     width: 100%;
+   
 }
-    .swiper-button-next {
+    /* .swiper-button-next {
         right: 20px;
         transform: rotate(90deg);
       }
@@ -729,7 +746,7 @@ section .card .card-img img{
       .swiper-button-prev {
         left: 20px;
         transform: rotate(90deg);
-      }
+      } */
     /* FOOTER */
     .footer{
         padding: 30px;
@@ -738,6 +755,16 @@ section .card .card-img img{
     .footer-content{
         flex-direction: column;
         text-align: center;
+    }
+    .link ul li{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .link ul li:last-child{
+        padding-bottom: 30px;
     }
     
     
