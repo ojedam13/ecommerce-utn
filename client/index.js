@@ -1,5 +1,5 @@
 const shopContent = document.getElementById("shopContent");
-const cart = [];
+const cart = JSON.parse(localStorage.getItem("carrito")) || [];
 
 productos.forEach((product) => {
     const content = document.createElement("div");
@@ -22,21 +22,36 @@ productos.forEach((product) => {
             cart.map((prod) => {
                 if (prod.id === product.id) {
                     prod.quanty++
+                    saveLocal();
                     displayCartCounter();
-              }
-          })  
+                    
+                }
+            })
         } else {
-           cart.push({
-             id: product.id,
-             productName: product.productName,
-             price: product.price,
-             quanty: product.quanty,
-             img: product.img,
-           }); 
+            cart.push({
+                id: product.id,
+                productName: product.productName,
+                price: product.price,
+                quanty: product.quanty,
+                img: product.img,
+            });
+            saveLocal();
             displayCartCounter();
+
+            
         }
 
           
      
-    })
-})
+    });
+});
+
+
+
+//set item
+const saveLocal = () => {
+
+    localStorage.setItem("carrito", JSON.stringify(cart));
+}
+//get item
+JSON.parse(localStorage.getItem("carrito"))

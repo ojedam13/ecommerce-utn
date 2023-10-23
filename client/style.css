@@ -1,6 +1,6 @@
 /*Fuentes de Google Fonts*/
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800,900&display=swap');
 
 /*
 font-family: 'Oswald', sans-serif;
@@ -397,6 +397,84 @@ img{
     font-size: 16px;
     color: #111111;
 }
+/*Comentarios*/
+.swiper{
+    width: 950px;
+}
+
+section .card .card-img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    padding: 3px;
+    background: #111111;
+}
+
+section .card .card-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #f5f5f5;
+}
+.container-card{
+    display: flex;
+    align-items: center;
+
+}
+.card{
+    position: relative;
+    background: #f5f5f5;
+    border-radius: 20px;
+    margin: 20px 0px;
+    width: 280px;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background: #181818;
+    border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.card .name-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    color: #111111;
+    
+}
+
+.name-content .name{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.name-content .comentario{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+
+.card .rating i{
+    font-size: 18px;
+    margin: 0 2px;
+}
 
 /* FOOTER */
 .footer{
@@ -406,8 +484,14 @@ img{
 
 .footer-content{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
+
+.link ul li{
+    display: flex;
+   
+    
+} 
 
 .link h3{
     font-size: 18px;
@@ -415,14 +499,30 @@ img{
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
+    justify-content: center;
+    display: flex;
 }
 
 .link a{
+    display: flex;
     font-size: 16px;
     color: #dcdcdc;
     display: block;
     margin-bottom: 10px;
+    padding-left: 10px;
+    transition: text-decoration 0.3s ease-in-out;
 }
+.link a:hover{
+    text-decoration: underline;
+    color: #f5f5f5;
+
+}
+.link i{
+    color: #f5f5f5;
+    
+}
+
+
 /*Product style*/
 .card-products-container{
     max-width: 1200px;
@@ -440,7 +540,7 @@ img{
 
 .card-products img {
     width: 250px;
-    height: 300px;
+    height: 250px;
     margin-bottom: 20px;
 }
 
@@ -503,6 +603,10 @@ img{
 }
 
 @media (max-width:991px){
+    
+    .container{
+        max-width: 100%;
+    }
     .menu{
         padding: 20px;
     }
@@ -594,7 +698,7 @@ img{
 
     .product img{
         width: 200px;
-        height: 280px;
+        height: 150px;
     }
 
     .icons{
@@ -605,7 +709,26 @@ img{
     .icon-1{
         margin-bottom: 30px;
     }
+    
+    .card-products{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    /* COMENTARIOS */
+    .container-card{
+    height: 750px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+    .swiper-button-next {
+        right: 20px;
+        transform: rotate(90deg);
+      }
 
+      .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+      }
     /* FOOTER */
     .footer{
         padding: 30px;
@@ -616,4 +739,8 @@ img{
         text-align: center;
     }
     
+    
+    
+      
+   
 }
